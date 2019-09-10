@@ -10,6 +10,9 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     
+    - name: Print ENV
+      run: env
+    
     - name: install Vale
       run: go get github.com/errata-ai/vale
       
@@ -34,10 +37,8 @@ jobs:
     - name: Dump runner context
       env:
         RUNNER_CONTEXT: ${{ toJson(runner) }}
-      run: echo "$RUNNER_CONTEXT"
-    
-    - name: Print ENV
-      run: env
+      run: echo "$RUNNER_CONTEXT"]
+      
       
     - name: Display JSON payload contents
       run: cat $GITHUB_EVENT_PATH
