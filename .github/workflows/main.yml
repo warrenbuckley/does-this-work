@@ -16,6 +16,11 @@ jobs:
     - name: install Vale
       run: go get github.com/errata-ai/vale
       
+    - run: echo ::add-path::$GOROOT/bin
+      
+    - name: Print ENV AGAIN
+      run: env
+      
     - name: attempt to run vale
       run: vale
     
