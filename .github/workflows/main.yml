@@ -1,6 +1,6 @@
 name: CI
 
-on: [repository_dispatch]
+on: [push]
 
 jobs:
   build:
@@ -9,6 +9,12 @@ jobs:
     
     steps:
     - uses: actions/checkout@v1
+    
+    - name: install Vale
+      run: go get github.com/errata-ai/vale
+      
+    - name: attempt to run vale
+      run: vale
     
     - name: Dump GitHub context
       env:
