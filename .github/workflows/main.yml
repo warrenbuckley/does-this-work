@@ -24,7 +24,7 @@ jobs:
       run: env
       
     - name: attempt to run vale
-      working-directory: bin
+      working-directory: ./bin
       run: vale --no-exit --output=JSON .
     
     - name: Dump GitHub context
