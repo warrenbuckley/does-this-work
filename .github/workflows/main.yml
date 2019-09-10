@@ -16,6 +16,8 @@ jobs:
     - name: install Vale
       run: curl -sfL https://install.goreleaser.com/github.com/ValeLint/vale.sh | sh -s v1.7.1 -d
       
+    - run: ls
+      
     - run: echo ::add-path::$GOROOT/bin
       
     - name: Print ENV AGAIN
