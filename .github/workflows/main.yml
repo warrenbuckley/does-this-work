@@ -21,7 +21,9 @@ jobs:
       ## try setting GOPATH to be ./bin (will need full path)
       
     - run: echo ::add-path::$GOROOT/bin
-      
+    
+    - run: echo ::add-path::$GITHUB_WORKSPACE/bin
+    
     - name: Print ENV AGAIN
       run: env
       
